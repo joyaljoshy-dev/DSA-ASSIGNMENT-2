@@ -1,0 +1,21 @@
+Input Data — Hash Table (Division Method) Project
+==================================================
+
+1. Song IDs to insert (in this order), n = 8:
+   105, 210, 315, 420, 525, 630, 735, 840
+
+2. Hash table size:
+   m = 10  (array of 10 buckets, separate chaining)
+
+3. Hash function (Division Method):
+   h(k) = k mod m
+
+4. Keys to search for in Part B, in this order:
+   420  -> expected: found (3rd element inserted into its bucket)
+   735  -> expected: found (4th / last element inserted into its bucket)
+   999  -> expected: not found (not in the ID list)
+   105  -> expected: found (1st element inserted, best case for linear search)
+
+These are the exact values hard-coded into src/hash_table.c
+(arrays songIDs[] and searchIDs[]), so re-running the program reproduces
+output/output.txt exactly.

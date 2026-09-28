@@ -1,0 +1,130 @@
+==================================================================
+PART A: INSERTION USING DIVISION METHOD  (table size m = 10)
+==================================================================
+Inserting  105 -> h(105) = 105 mod 10 = 5   [No collision]
+Index   Bucket Contents               
+------------------------------------
+0       []
+1       []
+2       []
+3       []
+4       []
+5       [105]
+6       []
+7       []
+8       []
+9       []
+
+Inserting  210 -> h(210) = 210 mod 10 = 0   [No collision]
+Index   Bucket Contents               
+------------------------------------
+0       [210]
+1       []
+2       []
+3       []
+4       []
+5       [105]
+6       []
+7       []
+8       []
+9       []
+
+Inserting  315 -> h(315) = 315 mod 10 = 5   [COLLISION]
+Index   Bucket Contents               
+------------------------------------
+0       [210]
+1       []
+2       []
+3       []
+4       []
+5       [105, 315]
+6       []
+7       []
+8       []
+9       []
+
+Inserting  420 -> h(420) = 420 mod 10 = 0   [COLLISION]
+Index   Bucket Contents               
+------------------------------------
+0       [210, 420]
+1       []
+2       []
+3       []
+4       []
+5       [105, 315]
+6       []
+7       []
+8       []
+9       []
+
+Inserting  525 -> h(525) = 525 mod 10 = 5   [COLLISION]
+Index   Bucket Contents               
+------------------------------------
+0       [210, 420]
+1       []
+2       []
+3       []
+4       []
+5       [105, 315, 525]
+6       []
+7       []
+8       []
+9       []
+
+Inserting  630 -> h(630) = 630 mod 10 = 0   [COLLISION]
+Index   Bucket Contents               
+------------------------------------
+0       [210, 420, 630]
+1       []
+2       []
+3       []
+4       []
+5       [105, 315, 525]
+6       []
+7       []
+8       []
+9       []
+
+Inserting  735 -> h(735) = 735 mod 10 = 5   [COLLISION]
+Index   Bucket Contents               
+------------------------------------
+0       [210, 420, 630]
+1       []
+2       []
+3       []
+4       []
+5       [105, 315, 525, 735]
+6       []
+7       []
+8       []
+9       []
+
+Inserting  840 -> h(840) = 840 mod 10 = 0   [COLLISION]
+Index   Bucket Contents               
+------------------------------------
+0       [210, 420, 630, 840]
+1       []
+2       []
+3       []
+4       []
+5       [105, 315, 525, 735]
+6       []
+7       []
+8       []
+9       []
+
+Total collisions during insertion : 6
+Load factor (alpha = n / m)        : 0.80
+
+==================================================================
+PART B: SEARCH COMPARISON - HASHING vs LINEAR SEARCH
+==================================================================
+Key     HashFound   HashComp    LinearFound   LinearComp  
+----------------------------------------------------------
+420     True        3           True          4           
+735     True        5           True          7           
+999     False       1           False         8           
+105     True        2           True          1           
+
+Average comparisons (Hashing)       : 2.75
+Average comparisons (Linear Search) : 5.00
